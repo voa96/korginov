@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> методология Path </title>
+</head>
+<style>
+    .block--header{
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+    }
+    .block--header__menu{
+        border: transparent;
+        background-color: black;
+        color: white;
+        border-radius: 40px;
+        padding: 5px 20px;
+        width: auto;
+        height: 40px;
+    }
+    .block--header__menu:hover{
+            cursor: pointer;
+    }
+    .block--main--grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .open{
+        display: grid;
+    }
+    .close{
+        display: none;
+    }
+    .block--main--grid__card{
+        margin-top: 20px;
+        text-align: center;
+        img{
+            background-color: aquamarine;
+            padding: 5px;
+        }
+        p{
+            background-color: aqua;
+            padding: 10px;
+        }
+    }
+    .block--header--nav{
+        gap: 10px;
+    }
+</style>
+<body>
+    <header class="block--header">
+        <img src="" alt="logotip ebat" class="block--header__logo">
+        <button class="block--header__menu">menu</button>
+        <nav class="block--header--nav close">
+            <a href="" class="block--header--nav__link">ссылка1</a>
+            <a href="" class="block--header--nav__link">ссылка2</a>
+            <a href="" class="block--header--nav__link">ссылка3</a>
+        </nav>
+    </header>
+    <main class="block--main">
+        <div class="block--main--grid">
+            <div class="block--main--grid__card">
+                <img src="" alt="kakauto kartinka">
+                <p>какойто текст</p>
+            </div>
+            <div class="block--main--grid__card">
+                <img src="" alt="kakauto kartinka">
+                <p>какойто текст</p>
+            </div>
+            <div class="block--main--grid__card">
+                <img src="" alt="kakauto kartinka">
+                <p>какойто текст</p>
+            </div>
+        </div>
+    </main>
+    <script>
+        const button = document.querySelector('.block--header__menu')
+        const nav = document.querySelector('.block--header--nav')
+        button.addEventListener('click', () => {
+            if(nav.classList.contains('close')){
+                nav.classList.add('open')
+                nav.classList.remove('close')
+            }
+            else{
+                nav.classList.add('close')
+                nav.classList.remove('open')
+                }
+        })
+    </script>
+</body>
+</html>
